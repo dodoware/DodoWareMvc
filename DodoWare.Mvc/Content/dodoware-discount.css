@@ -1,0 +1,197 @@
+﻿table.discount-table {
+    background-color: lightgreen;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 0 auto;
+    margin-left: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    margin: 0;
+    padding: 0;
+    height: 1em;
+}
+
+tr.empty {
+    height: 0.5em;
+}
+
+td {
+    padding: 0.25em;
+    vertical-align: middle;
+    height: 2em;
+}
+
+td.bottom {
+    height: 0.5em;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+td.discount-label {
+    text-align: right;
+    width: 4em;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+td.discount-header {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+td.discount-description {
+    font-size: 1.1em;
+    text-align: left;
+    width: 27em;
+}
+
+td.discount-description p {
+    margin: 0;
+}
+
+td.discount-input {
+    text-align: center;
+    font-size: 1.5em;
+    width: 5em;
+    height: 1.5em;
+}
+    
+
+td.discount-input input {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25em;
+}
+
+td.discount-row {
+    display: block;
+}
+
+div.button-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.discount-button {
+    display: inline-block;
+    width: 6em;
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+div.discount-button a {
+    text-align: center;
+    width: 100%;
+    background-color: lightskyblue;
+    cursor: pointer;
+    border-radius: 1em;
+    border: solid black;
+}
+
+
+div.ratio-table {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+input.error {
+    background-color: lightpink;
+}
+
+input.normal {
+}
+
+div.ratio-row {
+    margin: 0.5em;
+    display: block;
+}
+
+div.ratio-button {
+    display: inline-block;
+    width: 6em;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+div.ratio-button a {
+    display: block;
+    width: 100%;
+    background-color: lightgreen;
+    cursor: pointer;
+    border-radius: 1em;
+    border: solid black;
+    margin: 0;
+    line-height: 1.5em;
+    font-size: 1.25em;
+    text-decoration: none;
+}
+
+div.ratio-button a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: chartreuse;
+}
+
+
+table.section-a {
+    outline: thin solid;
+    background-color: #8bb8b4;
+}
+
+table.section-b {
+    outline: thin solid;
+    background-color: #8bb8b4;
+}
+
+div.discount-left-column {
+    width: 12em;
+    text-align: right;
+}
+
+div.discount-left-column p {
+    width: 100%;
+    margin: 0;
+    padding-right: 0.5em;
+}
+
+div.discount-right-column {
+    width: 32em;
+    text-align: left;
+    padding-left: 1em;
+}
+
+div.discount-form-button {
+    width: 6em;
+    display: inline-block;
+    line-height: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div.discount-form-button input {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    background-color: lightgreen;
+    border: solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25em;
+}
+
+div.discount-form-button input:hover {
+    background-color: chartreuse;
+ }
+

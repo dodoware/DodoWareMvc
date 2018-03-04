@@ -1,0 +1,44 @@
+﻿div.percent-form-button-row {
+    text-align: center;
+    height: 4em;
+    padding: 2em;
+}
+
+div.percent-form-button {
+    width: 20em;
+    display: inline-block;
+    height: 3em;
+    line-height: 1.25em;
+    font-size: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div.percent-form-button input {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    border: solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+table.results-table {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th,td {
+    padding: 0.25em;
+    border: solid black;
+    background-color: tan;
+    border-collapse: collapse;
+}
+

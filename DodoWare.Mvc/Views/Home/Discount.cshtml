@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Discounts";
+    DodoWare.Mvc.Models.Discount.DiscountWorker w = ViewBag.Worker;
+    DodoWare.Mvc.Models.Discount.DiscountInput i = w?.Input;
+    var basePrice = i?.BasePrice ?? "";
+    var salesTaxPercent = i?.SalesTaxPercent ?? "";
+    var discountPercent = i?.DiscountPercent ?? "";
+    var discountedPrice = i?.DiscountedPrice ?? "";
+    var finalPrice = i?.FinalPrice ?? "";
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-discount.css" rel="stylesheet" />
+    <script src="~/Scripts/dodoware-discount.js"></script>
+}
+
+@section HeaderMessage {
+    <h1>Discounts</h1>
+    <p>Enter both numbers in Section A.</p>
+    <p>Enter only one number in Section B.</p>
+    <p>Then click <strong>Go</strong> to calculate the other numbers in Section B.</p>
+}
+
+<form id="form" action="~/DoDiscount" method="post" autocomplete="off">
+    <table class="discount-table section-a">
+        <tr class="discount-row">
+            <td colspan="3" class="discount-header">
+                <p>Section A: Both numbers are required.</p>
+            </td>
+        </tr>
+        <tr class="discount-row">
+            <td class="discount-label">
+                <div class="discount-left-column">
+                    <p>Base Price</p>
+                </div>
+            </td>
+            <td class="discount-input">
+                <input type="text" id="BasePrice" name="BasePrice" value="@basePrice"/>
+            </td>
+            <td class="discount-description">
+                <div class="discount-right-column">
+                    <p>List or advertised price, before discounts and sales tax.</p>
+                </div>
+            </td>
+        </tr>
+        <tr class="discount-row">
+            <td class="discount-label">
+                <div class="discount-left-column">
+                    <p>Sales Tax Percent</p>
+                </div>
+            </td>
+            <td class="discount-input">
+                <input type="text" id="SalesTaxPercent" name="SalesTaxPercent" value="@salesTaxPercent"/>
+            </td>
+            <td class="discount-description">
+                <div class="discount-right-column">
+                    <p>Sales tax as a percentage.  If there is no sales tax, enter 0.</p>
+                </div>
+            </td>
+        </tr>
+        <tr class="discount-row"><td class="bottom"><div></div></td></tr>
+    </table>
+    <table class="discount-table section-b">
+        <tr class="discount-row">
+            <td colspan="3" class="discount-header">
+                <p>Section B: Enter one number. The other two will be calculated.</p>
+            </td>
+        </tr>
+        <tr class="discount-row">
+            <td class="discount-label">
+                <div class="discount-left-column">
+                    <p>Discount Percent</p>
+                </div>
+            </td>
+            <td class="discount-input">
+                <input type="text" id="DiscountPercent" name="DiscountPercent" value="@discountPercent"/>
+            </td>
+            <td class="discount-description">
+                <div class="discount-right-column">
+                    <p>Discount as a percentage.  If there is no discount, enter 0.</p>
+                </div>
+            </td>
+        </tr>
+        <tr class="discount-row">
+            <td class="discount-label">
+                <div class="discount-left-column">
+                    <p>Discounted Price</p>
+                </div>
+            </td>
+            <td class="discount-input">
+                <input type="text" id="DiscountedPrice" name="DiscountedPrice" value="@discountedPrice"/>
+            </td>
+            <td class="discount-description">
+                <div class="discount-right-column">
+                    <p>Price after the discount, but before sales tax is applied.</p>
+                </div>
+            </td>
+        </tr>
+        <tr class="discount-row">
+            <td class="discount-label">
+                <div class="discount-left-column">
+                    <p>Final Price</p>
+                </div>
+            </td>
+            <td class="discount-input">
+                <input type="text" id="FinalPrice" name="FinalPrice" value="@finalPrice"/>
+            </td>
+            <td class="discount-description">
+                <div class="discount-right-column">
+                    <p>Final price including discount and sales tax.</p>
+                </div>
+            </td>
+        </tr>
+        <tr class="discount-row"><td class="bottom"><div></div></td></tr>
+    </table>
+
+    <div class="ratio-table">
+        <div class="ratio-row">
+            <div class="discount-form-button">
+                <input type="button" id="go" value="Go" />
+            </div>
+            <div class="discount-form-button">
+                <input type="button" id="clear" value="Clear" />
+            </div>
+        </div>
+    </div>
+
+</form>

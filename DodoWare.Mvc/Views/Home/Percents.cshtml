@@ -1,0 +1,51 @@
+﻿@using DodoWare.Mvc.Models.Percent
+
+@{
+    ViewBag.Title = "Percents";
+}
+
+@section HeaderMessage {
+    <h1>Percents</h1>
+    <p>Choose a Scenario that best matches your problem.</p>
+    <p>Each scenario has three numbers labeled A, B, and C.</p>
+    <p>Enter any two numbers.  The third will be calculated.</p>
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-main-menu.css" rel="stylesheet" />
+}
+
+<div class="main-menu">
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Percent/1">Scenario 1</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">@(PercentWorker.GetScenario("1").Description)</p>
+        </div>
+    </div>
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Percent/2">Scenario 2</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">@(PercentWorker.GetScenario("2").Description)</p>
+        </div>
+    </div>
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Percent/3">Scenario 3</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">@(PercentWorker.GetScenario("3").Description)</p>
+        </div>
+    </div>
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Percent/4">Scenario 4</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">@(PercentWorker.GetScenario("4").Description)</p>
+        </div>
+    </div>
+</div>

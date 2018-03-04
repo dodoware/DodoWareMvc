@@ -1,0 +1,45 @@
+﻿table.results-table {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25em;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.25em;
+    border: solid black;
+    background-color: #d1c2ad;
+    border-collapse: collapse;
+}
+
+div.ratio-input input {
+    color: black;
+    background-color: #d1c2ad;
+    border: 1px solid #b7a27b;
+}
+
+div.ratio-form-button {
+    width: 20em;
+    display: inline-block;
+    height: 3em;
+    line-height: 1.25em;
+    font-size: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div.ratio-form-button input {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    border: solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+}
+

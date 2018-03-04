@@ -1,0 +1,30 @@
+﻿div.fraction-form-button-row {
+    text-align: center;
+    padding: 2em;
+}
+
+div.fraction-form-button {
+    width: 22em;
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div.fraction-form-button a {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    border: solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: lightgreen;
+}
+
+div.fraction-form-button a:hover {
+    background-color: chartreuse;
+}

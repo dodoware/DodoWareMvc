@@ -1,0 +1,50 @@
+﻿@using DodoWare.Mvc.Models.Percent
+
+@{
+    ViewBag.Title = "Percents";
+}
+
+@section HeaderMessage {
+    <h1>Fractions</h1>
+    <p>Select a fraction calculator.</p>
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-main-menu.css" rel="stylesheet" />
+}
+
+
+<div class="main-menu">
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Fraction/Add">Add</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">Add two fractions.</p>
+        </div>
+    </div>
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Fraction/Subtract">Subtract</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">Subtract one fraction from another.</p>
+        </div>
+    </div>
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Fraction/Multiply">Multiply</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">Multiply two fractions.</p>
+        </div>
+    </div>
+    <div class="main-menu-row">
+        <div class="main-menu-link-container">
+            <a class="main-menu-link" href="~/Fraction/Divide">Divide</a>
+        </div>
+        <div class="main-menu-text-container">
+            <p class="main-menu-text">Divide one fraction by another.</p>
+        </div>
+    </div>
+</div>

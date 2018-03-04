@@ -1,0 +1,82 @@
+﻿@using DodoWare.Mvc.Models.Ratio
+
+@{
+    ViewBag.Title = "Ratio Result";
+    RatioWorker w = ViewBag.Worker;
+    var A = w.A.Value;
+    var B = w.B.Value;
+    var C = w.C.Value;
+    var D = w.D.Value;
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-ratio.css?v=@(DateTime.Now.Ticks)" rel="stylesheet" />
+    <link href="~/Content/dodoware-ratio-results.css?v=@(DateTime.Now.Ticks)" rel="stylesheet" />
+}
+
+@section HeaderMessage {
+    <h1>Ratio Completion Results</h1>
+}
+
+    <div class="ratio-table">
+        <div class="ratio-row">
+            <div class="ratio-cell">
+                <div class="ratio-input">
+                    <input readonly="readonly" type="text" id="A" value="@A" />
+                </div>
+                <div class="ratio-divisor-bar"></div>
+                <div class="ratio-input">
+                    <input readonly="readonly" type="text" id="B" value="@B" />
+                </div>
+            </div>
+            <div class="ratio-cell">
+                <p class="ratio-equals">=</p>
+            </div>
+            <div class="ratio-cell">
+                <div class="ratio-input">
+                    <input readonly="readonly" type="text" id="C" value="@C" />
+                </div>
+                <div class="ratio-divisor-bar"></div>
+                <div class="ratio-input">
+                    <input readonly="readonly" type="text" id="D" value="@D" />
+                </div>
+            </div>
+        </div>
+        <div class="ratio-row">
+            <table class="results-table">
+                <tr>
+                    <th>Number</th>
+                    <th>Value</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>@A</td>
+                    <td>@(string.IsNullOrWhiteSpace(w.Input.A) ? "Calculated" : "Input")</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>@B</td>
+                    <td>@(string.IsNullOrWhiteSpace(w.Input.B) ? "Calculated" : "Input")</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>@C</td>
+                    <td>@(string.IsNullOrWhiteSpace(w.Input.C) ? "Calculated" : "Input")</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>@D</td>
+                    <td>@(string.IsNullOrWhiteSpace(w.Input.D) ? "Calculated" : "Input")</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="ratio-row">
+            <div class="ratio-form-button-row">
+                <div class="ratio-form-button">
+                    <input type="button" id="another" onclick="location.href='Ratio';" value="Calculate Another Ratio"/>
+                </div>
+            </div>
+        </div>
+    </div>

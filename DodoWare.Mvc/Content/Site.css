@@ -1,0 +1,263 @@
+﻿
+body {
+    font-family: "Helvetica", Sans-Serif;
+    font-size: 16px;
+    color: black;
+    background-color: lightgoldenrodyellow;
+    margin-top: 2em;
+    margin: 0 auto;
+}
+
+a {
+    color: brown;
+}
+
+a:visited {
+    color: green;
+}
+
+div.body {
+    display: block;
+    height: 48em;
+    width: 64em;
+    background-color: lightseagreen;
+    margin: 0 auto;
+}
+
+div.body-header {
+    display: block;
+    height: 12em;
+    width: 64em;
+    background-color: plum;
+}
+
+div.body-header-logo {
+    height: 12em;
+    width: 12em;
+    float: left;
+    display: inline-block;
+    background-color: lightblue;
+}
+
+div.body-header-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+div.body-header-message {
+    text-align: center;
+    height: 12em;
+    width: 40em;
+    float: left;
+    background-color: lightcoral;
+}
+
+div.body-header-message h1 {
+    margin: 0.5em;
+    padding: 0;
+    font-size: 200%;
+}
+
+div.body-header-message p {
+    margin: 0.5em;
+    padding: 0;
+    font-size: 125%;
+}
+
+div.body-header-links {
+    padding-top: 0.5em;
+    height: 12em;
+    width: 12em;
+    float: right;
+    background-color: lightgreen;
+}
+
+div.body-header-links ul {
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+div.body-header-links ul li {
+}
+
+div.body-header-links ul li a {
+    font-size: 1.5em;
+}
+
+div.body-main {
+    height: 30em;
+    width: 62em;
+    margin: 1em;
+}
+
+div.body-footer {
+    height: 4em;
+    width: 64em;
+    margin-bottom: 0;
+    background-color: lightpink;
+}
+
+div.body-footer p {
+    font-size: 125%;
+    margin: 0.25em;
+    text-align: center;
+}
+
+div.main-menu {
+    position: absolute;
+    margin-top: 0.5em;
+}
+
+div.body-table {
+    display: block;
+
+}
+
+div.main-menu-row {
+    width: 62em;
+    height: 6em;
+    background-color: peachpuff;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+div.main-menu-link-container {
+    float: left;
+    width: 20em;
+    height: 6em;
+    background-color: red;
+    line-height: 6em;
+}
+
+a.main-menu-link {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
+}
+
+a.main-menu-link:hover {
+    background-color: chartreuse;
+}
+
+div.main-menu-text-container {
+    float: right;
+    width: 40em;
+    height: 6em;
+    background-color: tan;
+    line-height: 6em;
+}
+
+p.main-menu-text {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 175%;
+    margin: 0 0 0 0;
+}
+
+div.percent-form {
+    width: 100%;
+    background-color: lightblue;
+}
+div.percent-form-row {
+    display: block;
+    margin: 0 auto;
+    background-color: lightgreen;
+    text-align: center;
+    margin: 1em 0 1em 0;
+    height: 20em;
+}
+div.percent-form-input-and-label {
+    display: inline-block;
+    border: solid black;
+    margin: 1em;
+    padding: 1em;
+    width: 12em;
+    height: 100%;
+}
+div.percent-form-label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+div.percent-form-label p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+div.percent-form-input {
+}
+
+div.percent-form-input input {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+}
+
+div.percent-form-input-error input {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+    background-color: lightpink;
+}
+
+td.result-table {
+    font-size: 2em;
+    text-align: left;
+    padding: 0.1em 0.5em 0.1em 0.1em;
+}
+
+div.percent-form-text {
+    display: inline-block;
+    font-size: 2em;
+}
+div.percent-form-button-row {
+    text-align: center;
+    background-color: pink;
+    height: 4em;
+}
+div.percent-form-button {
+    width: 8em;
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    font-size: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+div.percent-form-button input {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    background-color: pink;
+    border: solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+}
+div.percent-form-button input:hover {
+    background-color: chartreuse;
+}
+
+p.percent-results-error {
+    font-size: 1.5em;
+    color: darkred;
+    font-weight: bold;
+}

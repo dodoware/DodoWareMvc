@@ -1,0 +1,26 @@
+﻿table.results-table {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25em;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.25em 1em 0.25em 1em;
+    border: solid black;
+    background-color: tan;
+    border-collapse: collapse;
+}
+
+th.blank {
+    border:none;
+    background-color: rgba(0,0,0,0);
+}
+
+span.warning {
+    color: darkred;
+}
+

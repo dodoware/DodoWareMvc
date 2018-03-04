@@ -1,0 +1,59 @@
+﻿@using DodoWare.Mvc.Models
+
+@{
+    ViewBag.Title = "Ratio";
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-ratio.css" rel="stylesheet" />
+    <link href="~/Content/dodoware-percent-form.css" rel="stylesheet" />
+    <script src="~/Scripts/dodoware-ratio.js"></script>
+}
+
+@section HeaderMessage {
+    <h1>Ratio Completion</h1>
+    <p>A ratio is formed by four numbers labeled A, B, C, and D.</p>
+    <p>Enter any three numbers, then click <strong>Go</strong> to calculate the fourth.</p>
+}
+
+<form id="ratio-form" action="~/DoRatio" method="post" autocomplete="off">
+    <div class="ratio-table">
+        <div class="ratio-row">
+            <div class="ratio-cell">
+                <div class="ratio-colon-input">
+                    <input type="text" id="A" value="A" />
+                    <input type="hidden" id="A-hidden" name="A" value=""/>
+                </div>
+                <div class="ratio-colon"></div>
+                <div class="ratio-colon-input">
+                    <input type="text" id="B" value="B" />
+                    <input type="hidden" id="B-hidden" name="B" value=""/>
+                </div>
+            </div>
+            <div class="ratio-cell">
+                <p class="ratio-equals">=</p>
+            </div>
+            <div class="ratio-cell">
+                <div class="ratio-colon-input">
+                    <input type="text" id="C" value="C" />
+                    <input type="hidden" id="C-hidden" name="C" value="" />
+                </div>
+                <div class="ratio-colon">:</div>
+                <div class="ratio-colon-input">
+                    <input type="text" id="D" value="D" />
+                    <input type="hidden" id="D-hidden" name="D" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="ratio-row">
+            <div class="percent-form-button-row">
+                <div class="percent-form-button">
+                    <input type="button" id="Go" value="Go" />
+                </div>
+                <div class="percent-form-button">
+                    <input type="button" id="Clear" value="Clear" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

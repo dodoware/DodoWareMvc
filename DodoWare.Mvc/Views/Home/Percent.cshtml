@@ -1,0 +1,50 @@
+﻿@using DodoWare.Mvc.Models.Percent
+
+@{
+    ViewBag.Title = "Percent Scenario";
+    PercentScenario s = ViewBag.Scenario;
+    PercentWorker w = ViewBag.Worker;
+}
+
+@section HeaderMessage {
+    <h2>Percent Scenario:</h2>
+    <h1>@s.Description</h1>
+    <h3>Enter any two numbers, then click GO to calculate the third.</h3>
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-percent-form.css" rel="stylesheet" />
+    <script src="~/Scripts/dodoware-percent.js"></script>
+}
+
+<form id="percent-form" action="~/DoPercent" method="post" autocomplete="off">
+    <input type="hidden" name="ScenarioId" value="@s.Id"/>
+    <div class="percent-form">
+        <div class="percent-form-row">
+            <div class="percent-form-input-and-label">
+                <div class="percent-form-label"><p>A</p></div>
+                <div class="percent-form-input"><input name="A" id="A" type="text" /></div>
+            </div>
+            <div class="percent-form-text"><p>@s.AfterA</p></div>
+            <div class="percent-form-input-and-label">
+                <div class="percent-form-label"><p>B</p></div>
+                <div class="percent-form-input"><input name="B" id="B" type="text" /></div>
+            </div>
+            <div class="percent-form-text"><p>@s.AfterB</p></div>
+            <div class="percent-form-input-and-label">
+                <div class="percent-form-label"><p>C</p></div>
+                <div class="percent-form-input"><input name="C" id="C" type="text" /></div>
+            </div>
+        </div>
+        <div class="percent-form-row">
+            <div class="percent-form-button-row">
+                <div class="percent-form-button">
+                    <input type="button" onclick="SubmitPercentForm();" value="Go"/>
+                </div>
+                <div class="percent-form-button">
+                    <input type="button" onclick="ClearPercentForm();" value="Clear"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

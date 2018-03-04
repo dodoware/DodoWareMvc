@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Discount Result";
+    DodoWare.Mvc.Models.Discount.DiscountWorker w = ViewBag.Worker;
+    DodoWare.Mvc.Models.Discount.DiscountInput i = w.Input;
+
+    var basePrice = w.BasePrice;
+    var basePriceOrigin = "Input";
+
+    var discountPercent = w.DiscountPercent.Value;
+    var discountPercentOrigin = string.IsNullOrWhiteSpace(i.DiscountPercent) ? "Calculated" : "Input";
+    var discountPercentWarning = (discountPercent < 0) ? "A negative value is unexpected.  Please check your input." : null;
+
+    var discountAmount = w.DiscountAmount;
+    var discountAmountOrigin = "Calculated";
+
+    var discountedPrice = w.DiscountedPrice.Value;
+    var discountedPriceOrigin = string.IsNullOrWhiteSpace(i.DiscountedPrice) ? "Calculated" : "Input";
+    var discountedPriceWarning = (discountedPrice > basePrice) ? "Larger than the Base Price.  Please check your input." : null;
+
+    var salesTaxPercent = w.SalesTaxPercent;
+    var salesTaxPercentOrigin = "Input";
+
+    var salesTaxAmount = w.SalesTaxAmount;
+    var salesTaxAmountOrigin = "Calculated";
+
+    var finalPrice = w.FinalPrice.Value;
+    var finalPriceOrigin = string.IsNullOrWhiteSpace(i.FinalPrice) ? "Calculated" : "Input";
+    var finalPriceWarning = (finalPrice < 0) ? "A negative value is unexpected.  Please check your input." : null;
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-discount.css" rel="stylesheet" />
+<link href="~/Content/dodoware-discount-results.css" rel="stylesheet" />
+    <script src="~/Scripts/dodoware-discount.js"></script>
+}
+
+
+@section HeaderMessage {
+    <h1>Discount Result</h1>
+}
+
+<table class="results-table">
+    <tr>
+        <th class="blank"></th>
+        <th>Value</th>
+        <th>Notes</th>
+    </tr>
+    <tr>
+        <th>Base Price</th>
+        <td>@basePrice</td>
+        <td>
+            <span>@basePriceOrigin</span>
+        </td>
+    </tr>
+    <tr>
+        <th>Discount Percent</th>
+        <td>@discountPercent</td>
+        <td>
+            <span>@discountPercentOrigin</span>
+            @if (discountPercentWarning != null)
+            {
+                <br />
+                <span class="warning">@discountPercentWarning</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Discount Amount</th>
+        <td>@discountAmount</td>
+        <td>
+            <span>@discountAmountOrigin</span>
+        </td>
+    </tr>
+    <tr>
+        <th>Discounted Price</th>
+        <td>@discountedPrice</td>
+        <td>
+            <span>@discountedPriceOrigin</span>
+            @if (discountedPriceWarning != null)
+            {
+                <br />
+                <span class="warning">@discountedPriceWarning</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Sales Tax Percent</th>
+        <td>@salesTaxPercent</td>
+        <td>
+            <span>@salesTaxPercentOrigin</span>
+        </td>
+    </tr>
+    <tr>
+        <th>Sales Tax Amount</th>
+        <td>@salesTaxAmount</td>
+        <td>
+            <span>@salesTaxAmountOrigin</span>
+        </td>
+    </tr>
+    <tr>
+        <th>Final Price</th>
+        <td>@finalPrice</td>
+        <td>
+            <span>@finalPriceOrigin</span>
+            @if (finalPriceWarning != null)
+            {
+                <br />
+                <span class="warning">@finalPriceWarning</span>
+            }
+        </td>
+    </tr>
+</table>
+
+    <div class="ratio-table">
+        <div class="ratio-row">
+            <div class="ratio-button" id="Another"><a href="~/Discount">Another</a></div>
+        </div>
+    </div>

@@ -1,0 +1,74 @@
+﻿div.percent-form {
+    width: 100%;
+    background-color: #8bb8b4;
+}
+div.percent-form-row {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin: 1em 0 1em 0;
+    height: 10em;
+}
+div.percent-form-input-and-label {
+    display: inline-block;
+    border: solid black;
+    margin: 1em;
+    padding: 1em;
+    width: 8em;
+}
+div.percent-form-label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+div.percent-form-label p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+div.percent-form-input {
+}
+
+div.percent-form-input input {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+}
+
+div.percent-form-input-error input {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+    background-color: lightpink;
+}
+
+div.percent-form-text {
+    display: inline-block;
+    font-size: 2em;
+}
+
+div.percent-form-button-row {
+    text-align: center;
+    height: 4em;
+}
+div.percent-form-button {
+    width: 6em;
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+div.percent-form-button input {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    border: solid black;
+    border-radius: 2em;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+}

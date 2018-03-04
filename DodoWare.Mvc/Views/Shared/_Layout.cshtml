@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+@{
+    var w = ViewBag.Worker;
+    var inputErrorProlog = "The calculation could not be performed due to a problem with the input.";
+    var inputErrorEpilog = "Please notify the website administrator if this doesn't make sense.";
+    var logicErrorProlog = "The calculation failed due to an internal logic error.";
+    var logicErrorEpilog = "If this problem persists, please notify the website administrator.";
+    var error = (w == null) ? null : (w.InputError != null ? w.InputError : (w.LogicError != null ? w.LogicError : null));
+    var errorProlog = (w == null) ? null : (w.InputError != null ? inputErrorProlog : (w.LogicError != null ? logicErrorProlog : null));
+    var errorEpilog = (w == null) ? null : (w.InputError != null ? inputErrorEpilog : (w.LogicError != null ? logicErrorEpilog : null));
+
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=640px" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/dodoware.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/dodoware.js?v=@(DateTime.Now.Ticks)"></script>
+    @RenderSection("CssAndJs")
+</head>
+<body>
+    <div class="body">
+        <div class="body-header">
+            <div class="body-header-logo">
+                <a href="~/Home">
+                    <img src="~/Content/dodo-300x300.png"/>
+                </a>
+            </div>
+            <div class="body-header-message">
+                @RenderSection("HeaderMessage")
+            </div>
+            <div class="body-header-links">
+                <ul>
+                    <li><a href="~/Home">Home</a></li>
+                    <li><a href="~/About">About</a></li>
+                    <li><a href="~/Contact">Contact</a></li>
+                    <li><a href="~/Help">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="body-main">
+            @RenderBody()
+        </div>
+        @if (error != null)
+        {
+            <div class="modal-alert" id="modal-alert">
+                <div class="modal-content">
+                    <div class="modal-table">
+                        <div class="modal-row">
+                            <p>@errorProlog</p>
+                            @foreach (var s in error.Split('\n'))
+                            {
+                                <p>@s</p>
+                            }
+                            <p>@errorEpilog</p>
+                        </div>
+                    </div>
+                    <div class="modal-row">
+                        <div class="modal-button" id="modal-ok">
+                        <input type="button" class="modal-button" value="OK" />
+                    </div>
+                </div>
+                </div>
+            </div>
+        }
+        <div class="body-footer">
+            <p>Website copyright @DateTime.Now.Year  - DodoWare Software.</p>
+            <p>Dodo graphic courtesy <a class="dodo-link" target="_blank" href="http://www.ohnitsch.net">Ohnitsch Cartoons</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

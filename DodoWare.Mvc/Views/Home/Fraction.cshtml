@@ -1,0 +1,96 @@
+﻿@using DodoWare.Mvc.Models
+
+@{
+    DodoWare.Mvc.Models.Fraction.FractionOperation fo = ViewBag.FractionOperation;
+    ViewBag.Title = $"Fraction {@fo.UcName}";
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-fraction.css" rel="stylesheet" />
+    <script src="~/Scripts/dodoware-fraction.js"></script>
+}
+
+@section HeaderMessage {
+    <h1>Fraction @fo.UcName</h1>
+    <p>Enter two fractions for @fo.LcName.</p>
+    <p>Then press <strong>GO</strong> to calculate the result.</p>
+}
+
+<form id="fraction-form" action="~/DoFraction" method="post" autocomplete="off">
+    <input type="hidden" name="Operation" value="@fo.LcVerb"/>
+    <div class="fraction-expression">
+        <div class="mixed-fraction-with-view-controls">
+            <div class="mixed-fraction">
+                <div class="whole-number-hidden" id="whole-number-1">
+                    <input class="whole-number-input" id="whole-number-input-1" name="wholeNumber1" type="text" />
+                </div>
+                <div class="numerator-center" id="numerator-1">
+                    <input class="numerator-input" id="numerator-input-1" name="numerator1" type="text" />
+                </div>
+                <div class="fraction-bar-center" id="fraction-bar-1">
+                </div>
+                <div class="denominator-center" id="denominator-1">
+                    <input class="denominator-input" id="denominator-input-1" name="denominator1" type="text" />
+                </div>
+            </div>
+            <div class="mixed-fraction-view-controls">
+                <span class="view-control" onclick="show(1,0)">Whole Number</span>
+                <span class="view-control" onclick="show(1,1)">Simple Fraction</span>
+                <span class="view-control" onclick="show(1,2)">Mixed Fraction</span>
+            </div>
+        </div>
+        <div class="operation">
+            <span>@(fo.Symbol)</span>
+        </div>
+        <div class="mixed-fraction-with-view-controls">
+            <div class="mixed-fraction">
+                <div class="whole-number-hidden" id="whole-number-2">
+                    <input class="whole-number-input" id="whole-number-input-2" name="wholeNumber2" type="text" />
+                </div>
+                <div class="numerator-center" id="numerator-2">
+                    <input class="numerator-input" id="numerator-input-2" name="numerator2" type="text" />
+                </div>
+                <div class="fraction-bar-center" id="fraction-bar-2">
+                </div>
+                <div class="denominator-center" id="denominator-2">
+                    <input class="denominator-input" id="denominator-input-2" name="denominator2" type="text" />
+                </div>
+            </div>
+            <div class="mixed-fraction-view-controls">
+                <span class="view-control" onclick="show(2,0)">Whole Number</span>
+                <span class="view-control" onclick="show(2,1)">Simple Fraction</span>
+                <span class="view-control" onclick="show(2,2)">Mixed Fraction</span>
+            </div>
+        </div>
+        <div class="operation">
+            <span>=</span>
+        </div>
+        <div class="mixed-fraction-with-view-controls">
+            <div class="mixed-fraction">
+                <div class="whole-number-hidden" id="whole-number-2">
+                    <input class="whole-number-input" id="whole-number-input-2" name="wholeNumber2" type="text" />
+                </div>
+                <div class="numerator-center" id="numerator-2">
+                    <input class="numerator-input" id="numerator-input-2" name="numerator2" type="text" />
+                </div>
+                <div class="fraction-bar-center" id="fraction-bar-2">
+                </div>
+                <div class="denominator-center" id="denominator-2">
+                    <input class="denominator-input" id="denominator-input-2" name="denominator2" type="text" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fraction-format-info">
+        <p>The buttons below the fractions switch between input formats.</p>
+        <p>Click <strong>Whole Number</strong> to enter a whole number by itself (like <strong>123</strong>).</p>
+        <p>Click <strong>Simple Fraction</strong> to enter a fraction by itself (like <strong>&#xbd;</strong>).</p>
+        <p>Click <strong>Mixed Fraction</strong> to enter a whole number and a fraction together (like <strong>5&#xbd;</strong>).</p>
+    </div>
+    <div class="ratio-table">
+        <div class="ratio-row">
+            <div class="ratio-button" id="go"><a>Go</a></div>
+            <div class="ratio-button" id="clear"><a>Clear</a></div>
+        </div>
+    </div>
+</form>

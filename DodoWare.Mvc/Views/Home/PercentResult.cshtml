@@ -1,0 +1,73 @@
+﻿@using DodoWare.Mvc.Models.Percent
+
+@{
+    ViewBag.Title = "Percent Scenario Result";
+    PercentWorker w = ViewBag.Worker;
+    PercentScenario s = w.Scenario;
+    var A = w.A.Value;
+    var B = w.B.Value;
+    var C = w.C.Value;
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-percent-form.css" rel="stylesheet" />
+    <link href="~/Content/dodoware-percent-results.css" rel="stylesheet" />
+}
+
+@section HeaderMessage {
+    <h1>Percent Scenario Result</h1>
+    <h1>@s.Description</h1>
+}
+
+<div class="percent-form">
+    <div class="percent-form-row">
+        <div class="percent-form-input-and-label">
+            <div class="percent-form-label"><p>A</p></div>
+            <div class="percent-form-input"><input readonly="true" name="A" id="A" type="text" value="@A"/></div>
+        </div>
+        <div class="percent-form-text"><p>@s.AfterA</p></div>
+        <div class="percent-form-input-and-label">
+            <div class="percent-form-label"><p>B</p></div>
+            <div class="percent-form-input"><input readonly="true" name="B" id="B" type="text" value="@B"/></div>
+        </div>
+        <div class="percent-form-text"><p>@s.AfterB</p></div>
+        <div class="percent-form-input-and-label">
+            <div class="percent-form-label"><p>C</p></div>
+            <div class="percent-form-input"><input readonly="true" name="C" id="C" type="text" value="@C"/></div>
+        </div>
+    </div>
+    <div class="percent-form-row">
+        <table class="results-table">
+            <tr>
+                <th>Number</th>
+                <th>Value</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>@A</td>
+                <td>@(string.IsNullOrWhiteSpace(w.Input.A) ? "Calculated" : "Input")</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>@B</td>
+                <td>@(string.IsNullOrWhiteSpace(w.Input.B) ? "Calculated" : "Input")</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>@C</td>
+                <td>@(string.IsNullOrWhiteSpace(w.Input.C) ? "Calculated" : "Input")</td>
+            </tr>
+        </table>
+    </div>
+    <div class="percent-form-row">
+        <div class="percent-form-button-row">
+            <div class="percent-form-button">
+                <input type="button" onclick="location.href='Percent/@w.ScenarioId';" value="Run This Scenario Again" />
+            </div>
+            <div class="percent-form-button">
+                <input type="button" onclick="location.href='Percents';" value="Run A Different Scenario" />
+            </div>
+        </div>
+    </div>
+</div>

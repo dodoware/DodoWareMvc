@@ -1,0 +1,95 @@
+﻿@using DodoWare.Mvc.Models.Fraction;
+
+@{
+    DodoWare.Mvc.Models.Fraction.FractionWorker w = ViewBag.Worker;
+    var fo = w.Operation;
+    var f1 = w.Fraction1;
+    var f2 = w.Fraction2;
+    var r = w.Result;
+    var i = w.Input;
+
+    var wnClass1 = string.IsNullOrWhiteSpace(i.WholeNumber1) ? "hidden" : string.IsNullOrWhiteSpace(i.Numerator1) ? "center" : "left";
+    var wnClass2 = string.IsNullOrWhiteSpace(i.WholeNumber2) ? "hidden" : string.IsNullOrWhiteSpace(i.Numerator2) ? "center" : "left";
+    var wnClass3 = (r.WholePart == 0 && r.Numerator != 0) ? "hidden" : (r.Numerator == 0) ? "center" : "left";
+
+
+    var fClass1 = string.IsNullOrWhiteSpace(i.Numerator1) ? "hidden" : string.IsNullOrWhiteSpace(i.WholeNumber1) ? "center" : "right";
+    var fClass2 = string.IsNullOrWhiteSpace(i.Numerator2) ? "hidden" : string.IsNullOrWhiteSpace(i.WholeNumber2) ? "center" : "right";
+    var fClass3 = (r.Numerator == 0) ? "hidden" : (r.WholePart == 0) ? "center" : "right";
+
+    ViewBag.Title = "Fraction @(fo.UcName)";
+}
+
+@section CssAndJs {
+    <link href="~/Content/dodoware-fraction.css?v=@(DateTime.Now.Ticks)" rel="stylesheet" />
+    <link href="~/Content/dodoware-fraction-results.css?v=@(DateTime.Now.Ticks)" rel="stylesheet" />
+    <script src="~/Scripts/dodoware-fraction.js"></script>
+}
+
+@section HeaderMessage {
+    <h1>Fraction @(fo.UcName) Result</h1>
+}
+
+    <div class="fraction-expression">
+        <div class="mixed-fraction-with-view-controls">
+            <div class="mixed-fraction">
+                <div class="whole-number-@wnClass1">
+                    <input readonly="readonly" class="whole-number-input" type="text" value="@i.WholeNumber1"/>
+                </div>
+                <div class="numerator-@fClass1" id="numerator-1">
+                    <input readonly="readonly" class="numerator-input" type="text" value="@i.Numerator1"/>
+                </div>
+                <div class="fraction-bar-@fClass1">
+                </div>
+                <div class="denominator-@fClass1">
+                    <input readonly="readonly" class="denominator-input" type="text" value="@i.Denominator1" />
+                </div>
+            </div>
+        </div>
+        <div class="operation">
+            <span>@(fo.Symbol)</span>
+        </div>
+        <div class="mixed-fraction-with-view-controls">
+            <div class="mixed-fraction">
+                <div class="whole-number-@wnClass2">
+                    <input readonly="readonly" class="whole-number-input" type="text" value="@i.WholeNumber2"/>
+                </div>
+                <div class="numerator-@fClass2">
+                    <input readonly="readonly" class="numerator-input" type="text" value="@i.Numerator2"/>
+                </div>
+                <div class="fraction-bar-@fClass2">
+                </div>
+                <div class="denominator-@fClass2">
+                    <input readonly="readonly" class="denominator-input" type="text" value="@i.Denominator2"/>
+                </div>
+            </div>
+        </div>
+        <div class="operation">
+            <span>=</span>
+        </div>
+        <div class="mixed-fraction-with-view-controls">
+            <div class="mixed-fraction">
+                <div class="whole-number-@wnClass3">
+                    <input readonly="readonly" class="whole-number-input" type="text" value="@r.WholePart"/>
+                </div>
+                <div class="numerator-@fClass3">
+                    <input readonly="readonly" class="numerator-input" type="text" value="@r.Numerator"/>
+                </div>
+                <div class="fraction-bar-@fClass3">
+                </div>
+                <div class="denominator-@fClass3">
+                    <input readonly="readonly" class="denominator-input" type="text" value="@r.Denominator" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="fraction-form-button-row">
+        <div class="fraction-form-button">
+           <a href="Fraction/@fo.UcVerb">Back to Fraction @fo.UcName</a>
+        </div>
+        <div class="fraction-form-button">
+            <a href="Fractions">Back to Fraction Math</a>
+        </div>
+    </div>

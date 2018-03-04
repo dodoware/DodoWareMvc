@@ -1,0 +1,52 @@
+﻿div.ratio-table {
+    display: block;
+    text-align: center;
+    background-color: #8bb8b4;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+div.ratio-row {
+    display: block;
+}
+
+div.ratio-cell {
+    display: inline-block;
+    margin: 1em;
+    vertical-align: middle;
+}
+
+div.ratio-colon-input {
+    display: inline-block;
+    margin: 1em;
+}
+
+div.ratio-input {
+    display: block;
+    margin: 1em;
+}
+
+div.ratio-input input {
+    text-align: center;
+    font-size: 2em;
+    width: 6em;
+    color: lightsteelblue;
+}
+
+div.ratio-divisor-bar {
+    height: 0.25em;
+    background-color: black;
+}
+
+div.ratio-colon {
+    font-size: 5em;
+}
+
+p.ratio-equals {
+    font-size: 5em;
+    margin: 0;
+}
+
+div.fraction-format-info p {
+    font-size: 1.25em;
+}
